@@ -1,6 +1,6 @@
 pt:
   remarkable:
-    you_name_it: 
+    thinking_sphinx: 
       have_a_name: 
         description: "deve ter um nome"
         expectations: 

@@ -1,5 +1,5 @@
 module Remarkable
-  module YouNameIt
+  module ThinkingSphinx
     module Matchers
       class HaveANameMatcher < Remarkable::ActiveRecord::Base
         arguments :name

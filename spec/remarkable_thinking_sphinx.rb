@@ -10,7 +10,7 @@ class Person < ActiveRecord::Base
   end
 end
 
-describe Remarkable::YouNameIt do
+describe Remarkable::ThinkingSphinx do
   describe "have_a_name" do
     it "should validate that a model has a name" do
       have_a_name(:johny).matches?(Person.new).should be_true

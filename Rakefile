@@ -4,12 +4,12 @@ require 'rake'
 require 'rake/gempackagetask'
 require 'spec/rake/spectask'
  
-GEM = "remarkable_you_name_it"
+GEM = "remarkable_thinking_sphinx"
 GEM_VERSION = "0.2.0"
-SUMMARY = "YouNameIt Remarkable Matchers"
-AUTHOR = "Spiderman"
-EMAIL = "spiderman@marvel.com"
-HOMEPAGE = "http://spiderman.marvel.com"
+SUMMARY = "ThinkingSphinx Remarkable Matchers"
+AUTHOR = "Diego Carrion"
+EMAIL = "dc.rec1@gmail.com"
+HOMEPAGE = "http://www.diegocarrion.com"
 
  
 spec = Gem::Specification.new do |s|

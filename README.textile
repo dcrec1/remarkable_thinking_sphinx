@@ -2,7 +2,7 @@ h2. INSTALLATION:
 
 <pre>
   <code>
-    script/plugin install git://github.com/spiderman/remarkable_you_name_it.git
+    script/plugin install git://github.com/dcrec1/remarkable_thinking_sphinx.git
   </code>
 </pre>
 
@@ -10,8 +10,11 @@ h2. USAGE:
 
 <pre>
   <code>
-    describe Spiderman do
-      should_have_a_name :peter
+    describe Advertise do
+      should_index 'name'
+      should_index 'activities.name'
+      should_index 'addresses.city', :as => :address
+      should_be_filterable_by :priority
     end
   </code>
 </pre>

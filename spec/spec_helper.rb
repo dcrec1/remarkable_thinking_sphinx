@@ -17,9 +17,9 @@ ActiveRecord::Base.establish_connection(
 require 'remarkable_activerecord'
 
 dir = File.dirname(__FILE__)
-require File.join(dir, "..", "lib", "remarkable_you_name_it")
+require File.join(dir, "..", "lib", "remarkable_thinking_sphinx")
 
 require File.join(dir, "model_builder")
 include ModelBuilder
 
-Remarkable.include_matchers!(Remarkable::YouNameIt, Spec::Example::ExampleGroup)
+Remarkable.include_matchers!(Remarkable::ThinkingSphinx, Spec::Example::ExampleGroup)
