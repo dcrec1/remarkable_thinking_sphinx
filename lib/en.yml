@@ -2,13 +2,13 @@ en:
   remarkable:
     thinking_sphinx: 
       index: 
-        description: "should index {{field}}"
+        description: "index {{field}}"
         expectations: 
-          indexes: "{{subject_name}} should index {{field}}"
+          indexes: "{{subject_name}} index {{field}}"
         optionals:
           as:
             positive: "as {{inspect}}"
       have_index_attribute:
-        description: "index should include {{attribute}} as an attribute"
+        description: "include {{attribute}} as an index attribute"
         expectations: 
-          has_index_attribute: "{{subject_name}} index should have {{attribute}}"
+          has_index_attribute: "{{subject_name}} had {{attribute}} as an index attribute"
