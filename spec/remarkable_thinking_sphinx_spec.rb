@@ -38,6 +38,14 @@ describe Remarkable::ThinkingSphinx do
     it "should validate a field is not being indexed" do
       index('name').matches?(@model).should be_false
     end
+    
+    it "should validate a field has an alias" do
+      index("posts.subject", :as => :post_subjects).matches?(@model).should be_true
+    end
+    
+    it "should validate a field doesn't has an alias" do
+      index("posts.subject", :as => :thundercat).matches?(@model).should be_false
+    end
   end
   
   context "have_index_attribute" do
