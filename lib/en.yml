@@ -8,7 +8,7 @@ en:
         optionals:
           as:
             positive: "as {{inspect}}"
-      have_index_attribute
+      have_index_attribute:
         description: "index should include {{attribute}} as an attribute"
         expectations: 
           has_index_attribute: "{{subject_name}} index should have {{attribute}}"
