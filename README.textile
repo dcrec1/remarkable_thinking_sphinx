@@ -14,7 +14,7 @@ h2. USAGE:
       should_index 'name'
       should_index 'activities.name'
       should_index 'addresses.city', :as => :address
-      should_be_filterable_by :priority
+      should_have_index_attribute :priority
     end
   </code>
 </pre>

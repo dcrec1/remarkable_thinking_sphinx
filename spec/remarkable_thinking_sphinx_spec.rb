@@ -26,16 +26,27 @@ class Person < ActiveRecord::Base
 end
 
 describe Remarkable::ThinkingSphinx do
+  before :each do
+    @model = Person.new
+  end
+
   context "index" do
     it "should validate a field is being indexed" do
-      index('email').matches?(Person.new).should be_true
+      index('email').matches?(@model).should be_true
     end
     
     it "should validate a field is not being indexed" do
-      index('name').matches?(Person.new).should be_false
+      index('name').matches?(@model).should be_false
     end
   end
   
-  context "" do
+  context "have_index_attribute" do
+    it "should validate a index has an attribute" do
+      have_index_attribute("active").matches?(@model).should be_true
+    end
+    
+    it "should validate a index doesn't has an attribute" do
+      have_index_attribute("pasive").matches?(@model).should be_false
+    end
   end
 end
