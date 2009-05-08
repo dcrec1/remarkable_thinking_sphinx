@@ -32,7 +32,7 @@ describe Remarkable::ThinkingSphinx do
 
   context "index" do
     it "should validate a field is being indexed" do
-      index('email').matches?(@model).should be_true
+      index(:email).matches?(@model).should be_true
     end
     
     it "should validate a field is not being indexed" do

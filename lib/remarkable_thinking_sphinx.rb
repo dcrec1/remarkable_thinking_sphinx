@@ -17,7 +17,7 @@ module Remarkable
           stack = column.__stack.first
           name = column.__name.to_s
           stack.nil? ? name : "#{stack}.#{name}"
-        end.include?(value)
+        end.include?(value.to_s)
       end    
     end
     
