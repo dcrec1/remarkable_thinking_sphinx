@@ -5,6 +5,9 @@ pt:
         description: "deve indexar {{attribute}}"
         expectations: 
           indexes: "{{subject_name}} deve indexar {{attribute}}"
+        optionals:
+          as:
+            positive: "como {{inspect}}"
       have_index_attribute
         description: "index deve incluir {{attribute}} como atributo"
         expectations: 
