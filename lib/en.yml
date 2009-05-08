@@ -1,7 +1,11 @@
 en:
   remarkable:
     thinking_sphinx: 
-      have_a_name: 
-        description: "should have a name"
+      index: 
+        description: "should index {{attribute}}"
         expectations: 
-          has_a_name: "{{subject_name}} should have a name {{attribute}}"
+          indexes: "{{subject_name}} should index {{attribute}}"
+      have_index_attribute
+        description: "index should include {{attribute}} as an attribute"
+        expectations: 
+          has_index_attribute: "{{subject_name}} index should have {{attribute}}"
