@@ -2,9 +2,9 @@ pt:
   remarkable:
     thinking_sphinx: 
       index: 
-        description: "deve indexar {{attribute}}"
+        description: "deve indexar {{field}}"
         expectations: 
-          indexes: "{{subject_name}} deve indexar {{attribute}}"
+          indexes: "{{subject_name}} deve indexar {{field}}"
         optionals:
           as:
             positive: "como {{inspect}}"
