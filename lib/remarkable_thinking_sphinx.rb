@@ -38,6 +38,8 @@ module Remarkable
       class HaveIndexAttributeMatcher < ThinkingSphinx::Base
         arguments :attribute
         
+        optional :as
+        
         assertion :has_index_attribute?
         
         def has_index_attribute?
@@ -49,8 +51,8 @@ module Remarkable
         IndexMatcher.new(*args).spec(self)
       end
       
-      def have_index_attribute(attribute)
-        HaveIndexAttributeMatcher.new(attribute).spec(self)
+      def have_index_attribute(*args)
+        HaveIndexAttributeMatcher.new(*args).spec(self)
       end
 
     end

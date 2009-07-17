@@ -56,5 +56,13 @@ describe Remarkable::ThinkingSphinx do
     it "should validate a index doesn't has an attribute" do
       have_index_attribute("pasive").matches?(@model).should be_false
     end
+    
+    it "should validate an index attribute has an alias" do
+      have_index_attribute("posts.id", :as => :post_ids).matches?(@model).should be_true
+    end
+    
+    it "should validate an index attribute doesn't has an alias" do
+      have_index_attribute("posts.id", :as => :posts_names).matches?(@model).should be_false
+    end
   end
 end
