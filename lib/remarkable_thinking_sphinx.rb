@@ -14,7 +14,7 @@ module Remarkable
           end
         end.flatten.compact
         columns.map do |column|
-          stack = column.__stack.first
+          stack = column.__stack.inject { |a, b| a.to_s + "." + b.to_s }
           name = column.__name.to_s
           stack.nil? ? name : "#{stack}.#{name}"
         end.include?(value.to_s)

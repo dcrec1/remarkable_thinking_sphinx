@@ -17,6 +17,7 @@ class Person < ActiveRecord::Base
     ], :as => :address
     indexes posts.subject, :as => :post_subjects
     indexes posts.content, :as => :post_contents
+    indexes taggings.tag.name, :as => :tag
     
     has created_at, role_id
     has posts(:id), :as => :post_ids
@@ -40,11 +41,11 @@ describe Remarkable::ThinkingSphinx do
     end
     
     it "should validate a field has an alias" do
-      index("posts.subject", :as => :post_subjects).matches?(@model).should be_true
+      index("taggings.tag.name", :as => :tag).matches?(@model).should be_true
     end
     
     it "should validate a field doesn't has an alias" do
-      index("posts.subject", :as => :thundercat).matches?(@model).should be_false
+      index("taggings.tag.name", :as => :thundercat).matches?(@model).should be_false
     end
   end
   
