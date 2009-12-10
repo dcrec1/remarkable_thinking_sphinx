@@ -9,4 +9,8 @@ if RAILS_ENV == "test"
 
   Remarkable.include_matchers!(Remarkable::ThinkingSphinx, Spec::Rails::Example::ModelExampleGroup)
 
+  # Available Locales
+  Remarkable.add_locale RAILS_ROOT + "/vendor/plugins/remarkable_thinking_sphinx/locales/en.yml"
+  Remarkable.add_locale RAILS_ROOT + "/vendor/plugins/remarkable_thinking_sphinx/locales/pt-BR.yml"
+
 end
