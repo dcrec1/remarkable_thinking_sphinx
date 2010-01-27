@@ -9,7 +9,11 @@ module Remarkable
 
         key, value = map.keys.first.to_s, map.values.first
         as = @options[:as]
-        values = @subject.sphinx_indexes.first.send key.pluralize
+        values = if @subject.sphinx_indexes.nil? || @subject.sphinx_indexes.size == 0
+          []
+        else
+          @subject.sphinx_indexes.first.send key.pluralize
+        end
         columns = values.map do |v|
           if as.nil? or as.eql? v.alias
             v.columns

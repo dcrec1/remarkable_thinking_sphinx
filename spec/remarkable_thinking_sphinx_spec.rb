@@ -1,6 +1,8 @@
 require File.join(File.dirname(__FILE__), "spec_helper.rb")
 
 create_table "people" do end
+create_table "blog_posts" do end
+class BlogPost < ActiveRecord::Base; end
 
 require 'thinking_sphinx'
 
@@ -26,7 +28,23 @@ class Person < ActiveRecord::Base
 
 end
 
-describe Remarkable::ThinkingSphinx do
+describe Remarkable::ThinkingSphinx, 'for a model that does not have a defined index' do
+  subject { BlogPost.new }
+
+  context "index" do
+    it "should validate a field is not being indexed" do
+      index(:title).matches?(subject).should be_false
+    end
+  end
+
+  context "have_index_attribute" do
+    it "should validate a field is not being indexed" do
+      have_index_attribute(:date).matches?(subject).should be_false
+    end
+  end
+end
+
+describe Remarkable::ThinkingSphinx, 'for a model that has a defined index' do
   before :each do
     @model = Person.new
   end
