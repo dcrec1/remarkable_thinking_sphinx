@@ -3,6 +3,10 @@ module Remarkable
   
     class Base < Remarkable::ActiveRecord::Base
       def exists?(map)
+        if [nil, []].include?(@subject.sphinx_indexes) && @subject.class.respond_to?(:define_indexes)
+          @subject.class.define_indexes
+        end
+
         key, value = map.keys.first.to_s, map.values.first
         as = @options[:as]
         values = @subject.sphinx_indexes.first.send key.pluralize
