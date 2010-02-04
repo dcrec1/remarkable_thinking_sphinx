@@ -12,3 +12,11 @@ en:
         description: "include {{attribute}} as an index attribute"
         expectations: 
           has_index_attribute: "{{subject_name}} had {{attribute}} as an index attribute"
+      have_sphinx_scope:
+        description: "have to scope itself to {{options}} when sphinx scope {{scope_name}} is called"
+        expectations:
+          is_scope: "{{scope_name}} when called on {{subject_name}} return an instance of ThinkingSphinx::Search"
+          options_match: "{{scope_name}} when called on {{subject_name}} scope to {{options}}, got {{actual}}"
+        optionals:
+          args:
+            positive: "with {{inspect}} as argument"
